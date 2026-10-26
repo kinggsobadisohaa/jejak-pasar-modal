@@ -1,0 +1,6 @@
+{
+  "name": "Jejak Pasar Modal",
+  "description": "Website edukasi terstruktur untuk masyarakat umum dan pemula memahami dasar-dasar pasar modal dan cara membaca tren harga saham.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
