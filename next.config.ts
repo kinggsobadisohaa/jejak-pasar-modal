@@ -1,5 +1,7 @@
 import type {NextConfig} from 'next';
 
+const isVercel = process.env.VERCEL === '1';
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   eslint: {
@@ -19,7 +21,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  output: 'standalone',
+  // AI Studio membutuhkan standalone output. Vercel memakai builder Next.js
+  // bawaannya, jadi opsi ini tidak perlu (dan bisa membingungkan) di Vercel.
+  ...(isVercel ? {} : {output: 'standalone'}),
   transpilePackages: ['motion'],
   webpack: (config, {dev}) => {
     // HMR is disabled in AI Studio via DISABLE_HMR env var.
